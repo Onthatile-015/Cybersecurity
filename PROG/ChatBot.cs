@@ -52,7 +52,7 @@ namespace PROG
         {
             while (true)
             {
-                //Dividers
+                //Added dividers for structure
                 ShowDivider();
                 Console.ForegroundColor = ConsoleColor.DarkGray;
                 Console.Write("\nYou: ");
