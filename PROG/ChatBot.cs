@@ -70,6 +70,7 @@ namespace PROG
                     break; // it exits the loop and closes program
                 }
                 Console.ForegroundColor = ConsoleColor.Blue;
+                //Added a  typing effect for the bot's responses, making it feel more interactive and engaging.
                 string response = ResponseHandler.GetResponse(input);
                 TypingEffect("Bot: " + response);
                 Console.ResetColor();
