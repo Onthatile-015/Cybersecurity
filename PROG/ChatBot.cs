@@ -78,7 +78,7 @@ namespace PROG
 
         
         }
-
+        // Added a method to create a typing effect for the bot's responses, making it feel more interactive and engaging.
         public void TypingEffect(string message)
         {
             foreach (char c in message)
