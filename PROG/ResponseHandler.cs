@@ -12,6 +12,7 @@ namespace PROG
         // This method takes the user's input and generates an appropriate response based on keywords.
         public static string GetResponse(string input)
         {
+            // If the input is empty or only contains whitespace, it returns a default message asking the user to rephrase.
             if (string.IsNullOrWhiteSpace(input))
                 return "I didn't quite understand that. Could you rephrase?";
 
