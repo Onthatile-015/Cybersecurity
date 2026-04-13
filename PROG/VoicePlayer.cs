@@ -19,6 +19,7 @@ namespace PROG
             }
             catch
             {
+                //This is displayed when a program is run without the greeting.wav file in the same directory.
                 Console.WriteLine("Voice greeting could not be played.");
             }
         }
