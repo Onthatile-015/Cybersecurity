@@ -9,7 +9,7 @@ namespace CybersecurityBotWPF
     class ResponseHandler
     {
 
-        // Delegate for random response selection (Req 8 - delegates)
+        // Delegate for random response selection
         public delegate string ResponseSelector(List<string> responses);
 
         
@@ -17,7 +17,7 @@ namespace CybersecurityBotWPF
             private readonly Random _rng = new Random();
             public readonly ResponseSelector PickRandom;
 
-            // Req 3 - Random responses per topic
+            //Random responses per topic
             public readonly Dictionary<string, List<string>> RandomResponses = new Dictionary<string, List<string>>()
             {
                 ["phishing"] = new List<string>
@@ -62,7 +62,7 @@ namespace CybersecurityBotWPF
             }
             };
 
-            // Req 2 - Single keyword responses
+            //Single keyword responses
             public readonly Dictionary<string, string> KeywordResponses = new Dictionary<string, string>()
             {
                 ["mfa"] = "Multi-Factor Authentication adds an extra layer beyond your password. Enable it on all accounts — especially email and banking.",

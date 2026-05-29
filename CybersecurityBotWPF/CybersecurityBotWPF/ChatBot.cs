@@ -13,11 +13,11 @@ namespace CybersecurityBotWPF
         private readonly MemoryService _memory = new MemoryService();
         private readonly SentimentDetector _sentiment = new SentimentDetector();
 
-        // Req 4 - Conversation Flow: track last topic
+        //Conversation Flow: track last topic
         private string _lastTopic = "";
         private bool _awaitingName = true;
 
-        // Req 4 - Follow up triggers
+        //Follow up triggers
         private readonly List<string> _followUpTriggers = new List<string>
         {
             "more", "another", "again", "explain",
@@ -29,7 +29,7 @@ namespace CybersecurityBotWPF
         {
             string lower = input.ToLower().Trim();
 
-            // ── Step 1: Ask for name first ──
+            //It asks for name first
             if (_awaitingName)
             {
                 string name = ExtractName(input);
@@ -40,7 +40,7 @@ namespace CybersecurityBotWPF
                        ;
             }
 
-            // ── Step 2: Follow-up / continuation (Req 4) ──
+            // Follow-up / continuation
             if (_followUpTriggers.Any(t => lower.Contains(t))
                 && !string.IsNullOrEmpty(_lastTopic))
             {
@@ -48,7 +48,7 @@ namespace CybersecurityBotWPF
                 return $"Here's more on {_lastTopic}:\n\n{followUp}";
             }
 
-            // ── Step 3: Memory - user states interest (Req 5) ──
+            //Memory user states interest
             if (lower.Contains("interested in") || lower.Contains("i like")
                 || lower.Contains("i love") || lower.Contains("i want to learn about"))
             {
@@ -67,15 +67,15 @@ namespace CybersecurityBotWPF
                 }
             }
 
-            // ── Step 4: Detect sentiment first (Req 6) ──
+            //Detect sentiment first
             string sentimentPrefix = _sentiment.Detect(lower);
 
-            // ── Step 5: Find topic response (Req 2 & 3) ──
+            //Find topic response
             string topicResponse = FindTopicResponse(lower);
             if (!string.IsNullOrEmpty(topicResponse))
                 return sentimentPrefix + topicResponse;
 
-            // ── Step 6: Name recall (Req 5) ──
+            //Name recall
             if (lower.Contains("my name") || lower.Contains("who am i")
                 || lower.Contains("remember me"))
             {
@@ -84,7 +84,7 @@ namespace CybersecurityBotWPF
                 return "I don't think you've told me your name yet. What is it?";
             }
 
-            // ── Step 7: Interest recall (Req 5) ──
+            //Interest recall
             if (lower.Contains("what do i like") || lower.Contains("my interest"))
             {
                 if (_memory.Has("interest"))
@@ -93,7 +93,7 @@ namespace CybersecurityBotWPF
                 return "You haven't told me your interest yet. What topic would you like to focus on?";
             }
 
-            // ── Step 8: Greetings ──
+            //Greetings
             if (lower.Contains("hello") || lower.Contains("hi")
                 || lower.Contains("hey") || lower.Contains("howzit"))
             {
@@ -101,14 +101,14 @@ namespace CybersecurityBotWPF
                 return $"Hello{name}!  What cybersecurity topic can I help you with today?";
             }
 
-            // ── Step 9: Help menu ──
+            //Help menu
             if (lower.Contains("help") 
                 || lower.Contains("ask") || lower.Contains("menu"))
             {
                 return BuildHelpMenu();
             }
 
-            // ── Step 10: Error handling (Req 7) ──
+            //Error handling
             _lastTopic = "";
             string unknown = _memory.Has("name")
                 ? $"I'm not sure I understand that, {_memory.Recall("name")}. "
@@ -116,7 +116,7 @@ namespace CybersecurityBotWPF
             return unknown + "Can you try rephrasing?";
         }
 
-        // ── Find matching topic ──────────────────────────────
+        //Find matching topic
         private string FindTopicResponse(string lower)
         {
             // Check random response topics first
@@ -127,7 +127,7 @@ namespace CybersecurityBotWPF
                     _lastTopic = kvp.Key;
                     string response = _responseHandler.PickRandom(kvp.Value);
 
-                    // Personalise if interest matches (Req 5)
+                    // Personalise if interest matches
                     if (_memory.Has("interest") && _memory.Recall("interest") == kvp.Key)
                     {
                         string name = _memory.Recall("name");
@@ -151,7 +151,7 @@ namespace CybersecurityBotWPF
             return "";
         }
 
-        // ── Extract name from input ──────────────────────────
+        //Extract name from input 
         private static string ExtractName(string input)
         {
             string[] words = input.Trim().Split(' ');
@@ -170,7 +170,7 @@ namespace CybersecurityBotWPF
             return char.ToUpper(s[0]) + s.Substring(1).ToLower();
         }
 
-        // ── Help menu ────────────────────────────────────────
+        //Help menu
         private string BuildHelpMenu()
         {
             string name = _memory.Has("name") ? $", {_memory.Recall("name")}" : "";
@@ -182,7 +182,7 @@ namespace CybersecurityBotWPF
                    "Just type any topic or ask a question!";
         }
 
-        // ── Reset bot ────────────────────────────────────────
+        //Reset bot
         public void Reset()
         {
             _memory.ForgetAll();

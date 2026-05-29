@@ -8,7 +8,7 @@ namespace CybersecurityBotWPF
 {
     class MemoryService
     {
-        // Stores user details e.g. name, interest
+        // Stores user details such as name, interest
         private readonly Dictionary<string, string> _memory = new Dictionary<string, string>();
 
         // Save a value

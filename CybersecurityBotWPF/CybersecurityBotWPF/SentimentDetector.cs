@@ -25,7 +25,7 @@ namespace CybersecurityBotWPF
             ["bored"] = "Let's make cybersecurity interesting! Did you know hackers can crack a simple password in seconds? "
         };
 
-        // Returns empathetic prefix if sentiment found, empty string if not
+        // It returns empathetic prefix if sentiment found, empty string if not
         public string Detect(string input)
         {
             string lower = input.ToLower();

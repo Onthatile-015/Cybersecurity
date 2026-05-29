@@ -23,28 +23,28 @@ namespace CybersecurityBotWPF
         public MainWindow()
         {
             InitializeComponent();
-            // Greet user on startup
+            // Greeting user on startup
             AddBotBubble(" Welcome to the Cybersecurity Awareness Bot!\n\nBefore we begin, what is your name?");
 
-            // Play voice greeting
+            // Playing voice greeting
             SoundPlayer player = new SoundPlayer("greeting.wav");
             player.Play();
         }
 
-        // ── Send button click ──
+        //Send button click
         private void BtnSend_Click(object sender, RoutedEventArgs e)
         {
             SendMessage();
         }
 
-        // ── Enter key to send ──
+        // Enter key to send
         private void TxtUserInput_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
             if (e.Key == System.Windows.Input.Key.Enter)
                 SendMessage();
         }
 
-        // ── Clear chat button ──
+        //Clear chat button
         private void BtnClear_Click(object sender, RoutedEventArgs e)
         {
             ChatPanel.Children.Clear();
@@ -52,7 +52,7 @@ namespace CybersecurityBotWPF
             AddBotBubble("Chat cleared! What is your name?");
         }
 
-        // ── Core send logic ──
+        // Core send logic 
         private void SendMessage()
         {
             string input = userInput.Text.Trim();
@@ -67,7 +67,7 @@ namespace CybersecurityBotWPF
             AddBotBubble(response);
         }
 
-        // ── WhatsApp-style USER bubble (right side) ──
+        // This is WhatsApp style USER bubble
         private void AddUserBubble(string text)
         {
             string time = DateTime.Now.ToString("HH:mm");
@@ -126,7 +126,7 @@ namespace CybersecurityBotWPF
             chatScrollViewer.ScrollToBottom();
         }
 
-        // ── WhatsApp-style BOT bubble (left side) ──
+        // WhatsApp-style BOT bubble
         private void AddBotBubble(string text)
         {
             string time = DateTime.Now.ToString("HH:mm");
