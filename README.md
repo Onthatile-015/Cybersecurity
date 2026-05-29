@@ -1,14 +1,14 @@
 #  Cybersecurity Awareness Chatbot
 
 ##  Project Overview
-This project is a console-based Cybersecurity Awareness Chatbot developed in C#. The chatbot is designed to educate users about basic cybersecurity practices such as password safety, phishing, and safe browsing.
+This project started as a command-line chatbot in Part 1 and was later upgraded into a modern WPF GUI application in Part 2.
 
-The chatbot interacts with users in a friendly and structured way, using voice, text, and visual elements to enhance the user experience.
+The chatbot interacts with users in a conversational WhatsApp-style interface and provides cybersecurity guidance on topics such as passwords, phishing scams and online privacy.
 
 
 
 ##  Features
-
+Part 1 
 -  Voice greeting using a WAV audio file
 -  ASCII art logo displayed at startup
 -  User interaction with personalised name greeting
@@ -18,6 +18,19 @@ The chatbot interacts with users in a friendly and structured way, using voice, 
 -  Typing effect to simulate real conversation
 -  Exit command ("bye") to close the application
 
+Part 2 Features
+ Modern GUI chatbot interface
+ WhatsApp-style chat bubbles
+ Timestamped messages
+ Profile picture integration
+ Keyword recognition
+ Random cybersecurity responses
+ Sentiment detection
+ Conversation flow handling
+ Memory and recall functionality
+ Error handling
+ Object-Oriented Programming structure
+ Dynamic responses
 
 
 ##  Cybersecurity Topics Covered
@@ -36,27 +49,32 @@ The chatbot interacts with users in a friendly and structured way, using voice, 
 - System.Media (for audio playback)
 - GitHub (version control)
 - GitHub Actions (CI/CD)
+- WPF
 
 
 
 ##  Project Structure
 
 Cybersecurity-Chatbot/
-│── Program.cs
-│── ChatBot.cs
-│── ResponseHandler.cs
-│── AsciiArt.cs
-│── greeting.wav
-│── README.md
+ Part 1 Console Application
+ Part 2 GUI Application
+ WAV voice greeting file
+ Images
 
 
 
 ##  How to Run the Application
-
+Part 1
 1. Open the project in Visual Studio
 2. Build the solution
 3. Run the program
 4. Interact with the chatbot via the console
+Part 2
+1. Open the solution in Visual Studio
+2. Build the solution
+3. Run the Windows Forms application
+4. Start chatting with the CyberSecurity Awareness Bot
+   
 
 
 ##  GitHub Version Control
@@ -69,6 +87,12 @@ This project includes multiple commits that reflect the development process:
 - User interaction and personalisation
 - Chatbot response system
 - UI enhancements (colours, dividers, typing effect)
+- Rounded message bubbles
+- Left/right aligned chat messages
+- Timestamp display
+- Dark mode inspired design
+- Cyber-themed header
+- User profile image
 
 
 
@@ -83,6 +107,6 @@ GitHub Actions is used to automatically build and check the project whenever cha
 
 ##  Conclusion
 
-This chatbot demonstrates how basic programming concepts, user interaction, and cybersecurity awareness can be combined into a functional and user-friendly console application.
+This chatbot demonstrates how basic programming concepts, user interaction, and cybersecurity awareness can be combined into a functional and user-friendly console application and GUI application.
 
 
