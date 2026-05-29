@@ -85,7 +85,7 @@ namespace CybersecurityBotWPF
             }
 
             //Interest recall
-            if (lower.Contains("what do i like") || lower.Contains("my interest"))
+            if (lower.Contains("what do i like") || lower.Contains("my interest") || lower.Contains("remember"))
             {
                 if (_memory.Has("interest"))
                     return $"You mentioned you're interested in {_memory.Recall("interest")}.\n" +

@@ -24,7 +24,7 @@ namespace CybersecurityBotWPF
         {
             InitializeComponent();
             // Greeting user on startup
-            AddBotBubble(" Welcome to the Cybersecurity Awareness Bot!\n\nBefore we begin, what is your name?");
+            AddBotBubble(" Welcome to the Cybersecurity Awareness Bot!\n\nWhat is your name?");
 
             // Playing voice greeting
             SoundPlayer player = new SoundPlayer("greeting.wav");
