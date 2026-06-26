@@ -145,7 +145,7 @@ namespace CybersecurityBotWPF
 
 
 
-            // ── QUIZ COMMANDS ──
+            // QUIZ COMMANDS
             if (_quiz.IsActive)
             {
                 string answer = lower.Trim();
@@ -247,7 +247,7 @@ namespace CybersecurityBotWPF
                 return BuildHelpMenu();
             }
 
-            // ── Task: Add task ──
+            //Task: Add task
             if (lower.Contains("add task") || lower.Contains("new task") || lower.Contains("create task"))
             {
                 string title = input.Length > 9 ? input.Substring(9).Trim() : "Cybersecurity Task";
@@ -258,7 +258,7 @@ namespace CybersecurityBotWPF
                     : "Could not add task. Please check your database connection.";
             }
 
-            // ── Task: Set reminder ──
+            // Task: Set reminder
             if (lower.Contains("remind me in") || lower.Contains("reminder"))
             {
                 string reminderText = input;
@@ -282,7 +282,7 @@ namespace CybersecurityBotWPF
                 return "You don't have any tasks yet. Add one first by typing 'add task [task name]'";
             }
 
-            // ── Task: View tasks ──
+            // Task: View tasks
             if (lower.Contains("show tasks") || lower.Contains("my tasks")
                 || lower.Contains("view tasks") || lower.Contains("list tasks"))
             {
@@ -300,7 +300,7 @@ namespace CybersecurityBotWPF
                 return result;
             }
 
-            // ── Task: Complete task ──
+            // Task: Complete task 
             if (lower.Contains("complete task") || lower.Contains("done task")
                 || lower.Contains("finish task") || lower.Contains("mark task"))
             {
@@ -317,7 +317,7 @@ namespace CybersecurityBotWPF
                 return "Please specify the task number. Example: 'complete task 1'";
             }
 
-            // ── Task: Delete task ──
+            // Task: Delete task
             if (lower.Contains("delete task") || lower.Contains("remove task"))
             {
                 foreach (var word in lower.Split(' '))
@@ -418,7 +418,7 @@ namespace CybersecurityBotWPF
             _awaitingName = true;
         }
 
-        // ── NLP: Normalise varied user input ──
+        // NLP: Normalise varied user input 
         private string NormaliseInput(string input)
         {
             // Password variations
