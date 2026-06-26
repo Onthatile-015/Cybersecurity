@@ -121,7 +121,7 @@ namespace CybersecurityBotWPF
                 }
                 return "Specify the task number. Example: 'complete task 1'";
             }
-
+            //deleting a task
             if (lower.Contains("delete task") || lower.Contains("remove task"))
             {
                 foreach (var word in lower.Split(' '))
