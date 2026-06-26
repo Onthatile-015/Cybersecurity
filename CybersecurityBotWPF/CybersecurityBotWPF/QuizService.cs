@@ -180,7 +180,7 @@ namespace CybersecurityBotWPF
 
             return feedback + GetCurrentQuestion();
         }
-        //Ending quiz
+        //Ending quiz and providing feedback based on the score
         private string EndQuiz()
         {
             _isActive = false;
