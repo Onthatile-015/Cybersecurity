@@ -23,7 +23,7 @@ namespace CybersecurityBotWPF
 
     internal class DatabaseService
     {
-        //Connection details for MySQL database
+        //showing Connection details for MySQL database
         private readonly string _connectionString =
             "Server=localhost;Database=cybersecuritybot;Uid=root;Pwd=Onthatile@60;";
 
