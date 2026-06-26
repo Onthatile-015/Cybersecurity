@@ -27,7 +27,7 @@ namespace CybersecurityBotWPF
         private readonly string _connectionString =
             "Server=localhost;Database=cybersecuritybot;Uid=root;Pwd=Onthatile@60;";
 
-        // ── Test connection ──
+        // Test connection
         public bool TestConnection()
         {
             try
@@ -39,7 +39,7 @@ namespace CybersecurityBotWPF
             catch { return false; }
         }
 
-        // ── Add a task ──
+        // Add a task
         public bool AddTask(string title, string description, string reminderDate)
         {
             try
@@ -57,7 +57,7 @@ namespace CybersecurityBotWPF
             catch { return false; }
         }
 
-        // ── Get all tasks ──
+        // Get all tasks
         public List<TaskItem> GetAllTasks()
         {
             var tasks = new List<TaskItem>();
@@ -85,7 +85,7 @@ namespace CybersecurityBotWPF
             return tasks;
         }
 
-        // ── Mark task as complete ──
+        //  Mark task as complete
         public bool CompleteTask(int id)
         {
             try
@@ -101,7 +101,7 @@ namespace CybersecurityBotWPF
             catch { return false; }
         }
 
-        // ── Delete a task ──
+        // Delete a task
         public bool DeleteTask(int id)
         {
             try
