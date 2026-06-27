@@ -31,7 +31,13 @@ Part 2 Features
  Error handling
  Object-Oriented Programming structure
  Dynamic responses
-
+ 
+Part 3 Feautures
+ Task assistant
+ Activity log
+ Task storage
+ NLP Stimulation
+ 
 
 ##  Cybersecurity Topics Covered
 
@@ -50,6 +56,7 @@ Part 2 Features
 - GitHub (version control)
 - GitHub Actions (CI/CD)
 - WPF
+- MySQL
 
 
 
